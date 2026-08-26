@@ -244,7 +244,7 @@ O principal objetivo não é criar um RPG completo, mas sim utilizar um projeto 
 * **Java**
 * **Git**
 * **GitHub**
-* IDE de preferência
+* **InteliJ IDEA**
 
 ---
 
