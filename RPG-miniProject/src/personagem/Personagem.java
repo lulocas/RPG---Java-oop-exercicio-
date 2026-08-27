@@ -1,22 +1,33 @@
 package personagem;
 
+import enums.TipoArma;
 import enums.TipoPersonagem;
 
 abstract class Personagem {
     private String nome;
     private int nivel;
     private int vida;
+    private int vidaMaxima;
+    private int xp;
     TipoPersonagem tipo;
+    TipoArma armaEquipada;
 
-    protected abstract void atacar();
+    public Personagem(){
+        nivel = 1;
+        vida = 100;
+        vidaMaxima = 100;
+        xp = 0;
+    }
+
+    protected abstract int atacar();
     protected void receberDano(int dano){
         this.vida -= dano;
         System.out.println(this.nome + " recebeu -" + dano + " de dano");
         System.out.println("Vida atual -> " + this.vida);
     }
     protected void curar(int cura){
-        if(this.vida + cura > 100){
-            this.vida = 100;
+        if(this.vida + cura > vidaMaxima){
+            this.vida = vidaMaxima;
         }else{
             this.vida += cura;
         }
